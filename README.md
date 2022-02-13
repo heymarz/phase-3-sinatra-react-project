@@ -59,8 +59,13 @@ This will run your server on port
 
 ### Frontend Start up
 
-The front end is in another folder called ------,
-to start 
+The front end is in another folder called phase-3-bucket-list-frontend,
+to start, run:
+
+```console
+$ npm start ```
+
+You can open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
 ## Resources
