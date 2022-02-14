@@ -6,9 +6,8 @@ class LocationsController < ApplicationController
   end
 
   post '/locations' do
-    @attraction = Attraction.find_or_create_by(name: params[:location])
-    @dining = Dining.find_or_create_by(name: params[:location])
-
+    @location = Location.find_or_create_by(name: params[:location])
+    
     if @location.save
       @location.to_json(include: [:attraction][:dining])
     else
