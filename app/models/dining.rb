@@ -1,3 +1,3 @@
-class Dining < ActiveRecod::Base
+class Dining < ActiveRecord::Base
   belongs_to :location
 end

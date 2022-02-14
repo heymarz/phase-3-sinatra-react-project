@@ -1,3 +1,3 @@
-class Attraction < ActiveRecod::Base
+class Attraction < ActiveRecord::Base
   belongs_to :location
 end
