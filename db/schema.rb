@@ -12,18 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2022_02_15_183756) do
 
-  create_table "attraction", force: :cascade do |t|
-    t.string "attraction"
-    t.integer "location_id"
-  end
-
-  create_table "dining", force: :cascade do |t|
-    t.string "dining"
+  create_table "attractions", force: :cascade do |t|
+    t.string "name"
     t.integer "location_id"
   end
 
   create_table "locations", force: :cascade do |t|
     t.string "state"
+  end
+
+  create_table "restaurants", force: :cascade do |t|
+    t.string "name"
+    t.integer "location_id"
   end
 
 end

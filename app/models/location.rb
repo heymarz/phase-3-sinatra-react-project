@@ -1,4 +1,4 @@
 class Location < ActiveRecord::Base
-  has_many :attraction
-  has_many :dining
+  has_many :attractions
+  has_many :restaurants
 end
