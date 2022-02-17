@@ -5,9 +5,10 @@ class  RestaurantController < ApplicationController
     @restaurants.to_json
   end
 
-  post '/restaurants' do
-    @restaurant = Restaurant.find_or_create_by(name: params[:name])
+  patch '/restaurants/:id' do
+    @restaurant = Restaurant.find_by_id(params[:id])
+    @Restaurant.update(name: params[:name])
   end
 
-  
+
 end
