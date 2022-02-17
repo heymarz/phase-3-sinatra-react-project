@@ -14,4 +14,5 @@ use Rack::JSONBodyParser
 # Our application
 use LocationsController
 use AttractionsController
+use RestaurantController
 run ApplicationController
