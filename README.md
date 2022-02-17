@@ -25,7 +25,7 @@ Hello, this is my bucket list of the places I would like to visit. React would b
 6. Delete locations (react)
 6. Create locations (react)
 
-7. Create attractions (sinatra)
+7. Update attractions with a patch (sinatra)
 8. List attraction (sinatra)
 9. Delete attraction (sinatra)
 10. Create attraction (react)
