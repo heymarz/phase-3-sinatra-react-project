@@ -1,22 +1,16 @@
 class LocationsController < ApplicationController
   
   get '/locations' do
-    "Hello World"
     @locations = Location.all
     @locations.to_json(include: [:attractions, :restaurants])
   end
 
   post '/locations' do
-    @location = Location.find_or_create_by(name: params[:state])
-    
-    if @location.save
-      @location.to_json include: [:attractions, :restaurants]
-    else
-      {errors: @location.errors.full_messages}.to_json
-    end
+    @locations = Location.create(state: params[:state])
+    @locations.to_json(include: [:attractions, :restaurants])
   end
 
-  delete '/location/:id' do
+  delete '/locations/:id' do
     find_location
     if @location
       @location.destroy
