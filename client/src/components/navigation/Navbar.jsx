@@ -7,12 +7,11 @@ function Navbar(){
       <nav>
         <ul>
           <li><Link to="/">My travel Wish list</Link></li>
-          <li><Link to="/locations">States to visit</Link></li>
-          <li><Link to="/attractions">Attractions by state</Link></li>
-          <li><Link to="/restaurants">Restaurants by state</Link></li>
+          <li><Link to="/search">Search</Link></li>
+          <li><Link to="/locations/new">Add to Travel Wish List</Link></li>
         </ul>
       </nav>
     </div>
   )
 }
-export default Navbar
+export default Navbar;
