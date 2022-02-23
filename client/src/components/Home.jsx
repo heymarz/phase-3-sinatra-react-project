@@ -1,15 +1,13 @@
 import React from 'react'
 import LocationCard from './LocationCard'
 
-function Home({locations}) {
-  const displayWishList = locations
-  // .filter((locations)=>
-    // locations.toLowerCase().includes(search.toLowerCase())
-    // )
-  .map((locations)=> <LocationCard 
+function Home({ locations, handleDelete }) {
+  const displayWishList = locations.map((locations)=> {
+    return <LocationCard 
       key={locations.id}
       locations = {locations}
-      />)
+      handleDelete={handleDelete}
+    />})
 
   return (
     <div>

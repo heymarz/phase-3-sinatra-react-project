@@ -8,7 +8,7 @@ import ErrorPage from './components/ErrorPage';
  
 function App() {
   const [locations, setLocations] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     fetch('http://localhost:9292/locations')
@@ -16,17 +16,22 @@ function App() {
     .then (data => setLocations(data))
   },[])
 
-    function handleSearch(newSearch) {
-      setSearch(newSearch)
-    }
+  function onSearch(newSearch){
+    setSearch(newSearch)
+  }
+
+  function handleDelete(id){
+    const newLocationsArray = locations.filter((location)=>location.id !== id);
+    setLocations(newLocationsArray)
+  }
 
   return (
     <Router>
       <Navbar />
         <Routes>
-          <Route path="/" element= {<Home locations={locations} />} 
+          <Route path="/" element= {<Home locations= {locations} handleDelete={handleDelete} />} 
           />
-          <Route path=":id" element= {<Search handleSearch={handleSearch} search={search}/>} 
+          <Route path=":id" element= {<Search setSearch={setSearch} onSearch={onSearch} search={search} locations={locations}/>} 
           />
           <Route path="/locations/new" element={<TravelForm 
             setLocations={setLocations} />} 
