@@ -1,13 +1,15 @@
 import React from 'react'
+import { baseUrl } from '../Global';
 
 function LocationCard({ locations, handleDelete }) {
   const {state, id, attractions, restaurants} = locations
 
   const displayAttractions = attractions.map((attr)=><li key= {attr.id} >{attr.name}</li>)
+  
   const displayRestaurants = restaurants.map((restaurant)=><li key= {restaurant.id} >{restaurant.name}</li>)
   
   function handleDeleteClick(){
-    fetch(`http://localhost:9292/locations/${id}`,{
+    fetch(baseUrl + `/locations/${id}`,{
       method: "DELETE"
     });
     handleDelete(id)
