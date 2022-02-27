@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2022_02_15_183756) do
 
   create_table "attractions", force: :cascade do |t|
-    t.string "name"
+    t.string "attractionName"
     t.integer "location_id"
   end
 
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2022_02_15_183756) do
   end
 
   create_table "restaurants", force: :cascade do |t|
-    t.string "name"
+    t.string "restaurantName"
     t.integer "location_id"
   end
 
