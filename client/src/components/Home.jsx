@@ -1,21 +1,15 @@
-import React,{ useEffect, useState } from 'react'
+import React,{ useEffect } from 'react'
 import LocationCard from './LocationCard'
 import Search from './Search';
 import { baseUrl } from '../Global'
 
-function Home() {
-  const [locations, setLocations] = useState([]);
-  const [search, setSearch] = useState("")
+function Home({ locations, setLocations, search, setSearch }) {
 
   useEffect(() => {
     fetch(baseUrl + '/locations')
     .then(resp => resp.json())
     .then (data => setLocations(data))
   },[])
-
-  function onSearch(newSearch){
-    setSearch(newSearch)
-  }
 
   function handleDelete(id){
     const newLocationsArray = locations.filter((location)=>location.id !== id);
@@ -33,7 +27,7 @@ function Home() {
         if(!search){
           return displayWishList
         } else {
-          return locations.filter((location)=>{
+          return displayWishList.filter((location)=>{
             return location.state.toLowerCase().includes(search.toLowerCase())
         }) 
       }
@@ -45,8 +39,7 @@ function Home() {
         My Travel Wish List
       </h1>
       <Search 
-      onSearch = {onSearch} 
-      search={search}
+        onSearch = {setSearch}
       />
       <div>
        {locationsToRender()}

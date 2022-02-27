@@ -2,29 +2,30 @@ import React,{ useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { baseUrl, headers } from '../Global'
 
-function TravelForm({ setLocations }) {
+function TravelForm({ onNewTravelPlace }) {
 const [state, setState] = useState("");
 const [attraction, setAttraction] = useState("");
 const [restaurant, setRestaurant] = useState("");
 let navigate = useNavigate();
 
+
 function handleSubmit(e){
   e.preventDefault();
   const formData = {
     state: state,
-    attractions: attraction,
-    restaurants: restaurant
-  };
+    attractionName: attraction,
+    restaurantName: restaurant
+  }
   fetch(baseUrl + '/locations',{
     method: "POST",
-    headers,
-    body: JSON.stringify(formData)
+    headers: headers,
+    body: JSON.stringify(formData),
   })
   .then(resp => resp.json())
-  .then((data)=> { navigate('/');
-  console.log(data)
-})
+  .then((travelPlace)=> onNewTravelPlace(travelPlace));
+   navigate('/')
 }
+  
 
   return (
     <div>

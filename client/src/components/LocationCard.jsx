@@ -2,11 +2,12 @@ import React from 'react'
 import { baseUrl } from '../Global';
 
 function LocationCard({ locations, handleDelete }) {
+  
   const {state, id, attractions, restaurants} = locations
 
-  const displayAttractions = attractions.map((attr)=><li key= {attr.id} >{attr.name}</li>)
+  const displayAttractions = attractions.map((attr)=><li key= {attr.id} >{attr.attractionName}</li>)
   
-  const displayRestaurants = restaurants.map((restaurant)=><li key= {restaurant.id} >{restaurant.name}</li>)
+  const displayRestaurants = restaurants.map((restaurant)=><li key= {restaurant.id} >{restaurant.restaurantName}</li>)
   
   function handleDeleteClick(){
     fetch(baseUrl + `/locations/${id}`,{
@@ -14,6 +15,7 @@ function LocationCard({ locations, handleDelete }) {
     });
     handleDelete(id)
   }
+  
   return (
     <div>
       <h3>{state}</h3>
