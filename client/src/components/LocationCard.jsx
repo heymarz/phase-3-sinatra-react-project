@@ -1,5 +1,6 @@
 import React from 'react'
 import { baseUrl } from '../Global';
+import './styling.css';
 
 function LocationCard({ locations, handleDelete }) {
   
@@ -17,7 +18,7 @@ function LocationCard({ locations, handleDelete }) {
   }
   
   return (
-    <div>
+    <div class="card">
       <h3>{state}</h3>
       <h4><em>Attractions:</em></h4>
       <ol>{displayAttractions}</ol>

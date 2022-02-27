@@ -9,8 +9,7 @@ function Search ({ onSearch }) {
   }
   
   return (
-    <div>
-    <h1>Search</h1>
+    <div class="searchContainer">
     <form onSubmit={handleSeach}>
     <label htmlFor='search'>Search:</label>
     <input

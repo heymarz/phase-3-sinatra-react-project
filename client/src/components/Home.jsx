@@ -35,7 +35,7 @@ function Home({ locations, setLocations, search, setSearch }) {
 
   return (
     <div>
-      <h1>
+      <h1 class="header">
         My Travel Wish List
       </h1>
       <Search 
