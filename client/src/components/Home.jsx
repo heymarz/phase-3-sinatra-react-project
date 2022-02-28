@@ -1,14 +1,20 @@
-import React,{ useEffect } from 'react'
+import React,{ useEffect, useRef } from 'react'
 import LocationCard from './LocationCard'
 import Search from './Search';
 import { baseUrl } from '../Global'
 
 function Home({ locations, setLocations, search, setSearch }) {
+  const tempFunction = useRef();
+
+  const fetchFunction = () =>{
+  fetch(baseUrl + '/locations')
+  .then(resp => resp.json())
+  .then (data => setLocations(data))
+  }
+  tempFunction.current = fetchFunction 
 
   useEffect(() => {
-    fetch(baseUrl + '/locations')
-    .then(resp => resp.json())
-    .then (data => setLocations(data))
+    tempFunction.current()
   },[])
 
   function handleDelete(id){
@@ -16,6 +22,8 @@ function Home({ locations, setLocations, search, setSearch }) {
     setLocations(newLocationsArray)
   }
   
+  function locationsToRender(){
+
   const displayWishList = locations.map((locations)=> {
     return <LocationCard 
     key={locations.id}
@@ -23,7 +31,6 @@ function Home({ locations, setLocations, search, setSearch }) {
     handleDelete={handleDelete}
     />})
     
-      const locationsToRender = () => {
         if(!search){
           return displayWishList
         } else {
@@ -35,7 +42,7 @@ function Home({ locations, setLocations, search, setSearch }) {
 
   return (
     <div>
-      <h1 class="header">
+      <h1 className="header">
         My Travel Wish List
       </h1>
       <Search 
