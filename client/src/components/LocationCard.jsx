@@ -18,7 +18,7 @@ function LocationCard({ locations, handleDelete }) {
   }
   
   return (
-    <div class="card">
+    <div className="card">
       <h3>{state}</h3>
       <h4><em>Attractions:</em></h4>
       <ol>{displayAttractions}</ol>

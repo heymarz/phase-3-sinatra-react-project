@@ -5,7 +5,7 @@ function Navbar(){
   return (
     <div>
       <nav>
-        <div class="navigation">
+        <div className="navigation">
           <Link to="/">My travel Wish list</Link>
           <br />
           <Link to="/locations/new">Add to Travel Wish List</Link>

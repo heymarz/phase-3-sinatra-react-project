@@ -29,7 +29,7 @@ function handleSubmit(e){
 
   return (
     <div>
-      <h1 class="header">Add New Location to Travel Wish List</h1>
+      <h1 className="header">Add New Location to Travel Wish List</h1>
       <section>
       <form onSubmit={handleSubmit}>
         <label htmlFor="state">Name:
