@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { baseUrl, headers } from '../Global'
 
-function TravelForm({ onNewTravelPlace }) {
+function TravelForm() {
 const [state, setState] = useState("");
 const [attraction, setAttraction] = useState("");
 const [restaurant, setRestaurant] = useState("");
@@ -22,8 +22,9 @@ function handleSubmit(e){
     body: JSON.stringify(formData),
   })
   .then(resp => resp.json())
-  .then((travelPlace)=> onNewTravelPlace(travelPlace));
-   navigate('/')
+  .then((travelPlace)=> {
+    navigate('/')
+    });
 }
   
 

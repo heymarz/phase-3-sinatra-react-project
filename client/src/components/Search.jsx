@@ -1,13 +1,10 @@
-import {useState} from 'react'
-
-function Search ({ onSearch }) {
-  const [search, setSearch] = useState("")
+function Search ({ search, setSearch }) {
 
   function handleSeach(e){
     e.preventDefault();
-    onSearch(search)
+    setSearch(search)
   }
-  
+
   return (
     <div className="searchContainer">
     <form onSubmit={handleSeach}>
@@ -21,7 +18,6 @@ function Search ({ onSearch }) {
     />
     <button type="submit">submit</button>
     </form>
-   
     </div>
   )
 }

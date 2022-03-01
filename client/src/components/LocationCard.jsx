@@ -2,13 +2,11 @@ import React from 'react'
 import { baseUrl } from '../Global';
 import './styling.css';
 
-function LocationCard({ locations, handleDelete }) {
+function LocationCard({ location, handleDelete }) {
   
-  const {state, id, attractions, restaurants} = locations
-
-  const displayAttractions = attractions.map((attr)=><li key= {attr.id} >{attr.attractionName}</li>)
-  
-  const displayRestaurants = restaurants.map((restaurant)=><li key= {restaurant.id} >{restaurant.restaurantName}</li>)
+  const {state, id, attractions, restaurants} = location;
+  const displayAttractions = attractions.map((attr)=><li key= {attr.id} >{attr.attractionName}</li>);
+  const displayRestaurants = restaurants.map((restaurant)=><li key= {restaurant.id} >{restaurant.restaurantName}</li>);
   
   function handleDeleteClick(){
     fetch(baseUrl + `/locations/${id}`,{
