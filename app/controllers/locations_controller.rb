@@ -13,12 +13,10 @@ class LocationsController < ApplicationController
   #create new locations
   #also create the new attraction and restaurant included in the post request
   post '/locations' do
-    @locations = Location.create(state: params[:state])
-    @attractions = @locations.attractions.create(attractionName: params[:attractionName])
-    @restaurants = @locations.restaurants.create(restaurantName: parmas[:restaurantName])
-    @locations.to_json
-    @attractions.to_json
-    @restaurants.to_json
+    @location = Location.create(state: params[:state])
+    @location.attractions.create(attractionName: params[:attractionName])
+    @location.restaurants.create(restaurantName: params[:restaurantName])
+    @location.to_json(include: [:attractions, :restaurants])
   end
 
   delete '/locations/:id' do

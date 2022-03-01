@@ -1,13 +1,13 @@
 class AttractionsController < ApplicationController
 
   get '/attractions' do
-    @attractions = Attraction.all
-    @attractions.to_json
+    @attraction = Attraction.all
+    @attraction.to_json
   end
 
   post '/attractions' do
-    @attractions = Attraction.create(attractionName: params[:attractionName])
-      @attractions.to_json
+    @attraction = Attraction.create(attractionName: params[:attractionName])
+      @attraction.to_json
   end
 
 end

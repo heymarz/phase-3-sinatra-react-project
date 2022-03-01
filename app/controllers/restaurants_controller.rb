@@ -1,8 +1,8 @@
 class  RestaurantsController < ApplicationController
 
   get '/restaurants' do
-    @restaurants = Restaurant.all
-    @restaurants.to_json
+    @restaurant = Restaurant.all
+    @restaurant.to_json
   end
 
   post '/restaurants' do
