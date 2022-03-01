@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# My bucket List with React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This is my front end of a bucket list of the places I would like to visit. This API would be used to demostrate my knowledge on what I have learned from Flatiron using React as my front-end and Sinatra as my back-end(server).
 
-In the project directory, you can run:
+## Feature List
 
-### `npm start`
+- Home Page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Search bar
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Travel form to add a new location with restaurant(s) and attraction(s)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## MVP
 
-### `npm run build`
+1. Home Page 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. List all locations
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Delete a location along with its attached attraction(s) and/or restaurant(s)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Create location along with attraction(s) and/or restaurant(s)
 
-### `npm run eject`
+5. Search for a location based on state name
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Stretch Goals
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- update location, attraction or restaurant option(s) (update)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Frontend Start up
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The front end is in another folder called client,
+to start, run the following code in your terminal:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ cd client
+$ yarn start 
+```
 
-### Code Splitting
+You can open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [create-react-app][]
+- [dbdiagram.io][]
+- [Postman][postman download]
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[create-react-app]: https://create-react-app.dev/docs/getting-started
+[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
+[dbdiagram.io]: https://dbdiagram.io/
+[postman download]: https://www.postman.com/downloads/
+[network tab]: https://developer.chrome.com/docs/devtools/network/
