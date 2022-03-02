@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { baseUrl, headers } from '../Global'
 
-function TravelForm() {
+function TravelForm({setLocations}) {
 const [state, setState] = useState("");
 const [attraction, setAttraction] = useState("");
 const [restaurant, setRestaurant] = useState("");
@@ -23,6 +23,7 @@ function handleSubmit(e){
   })
   .then(resp => resp.json())
   .then((travelPlace)=> {
+    setLocations
     navigate('/')
     });
 }

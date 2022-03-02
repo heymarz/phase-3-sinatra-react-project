@@ -11,8 +11,9 @@ function App() {
   const [locations, setLocations] = useState([]);
   const [search, setSearch] = useState("")
 
+  
   useEffect(() => {
-    fetch(baseUrl + '/locations')
+  fetch(baseUrl + '/locations')
   .then(resp => resp.json())
   .then (data => setLocations(data))
   }
@@ -44,7 +45,7 @@ function App() {
           setSearch={setSearch}
           renderLocations={renderLocations}
           />} />
-          <Route path="/locations/new" element={<TravelForm />} />
+          <Route path="/locations/new" element={<TravelForm setLocations={setLocations}/>} />
           <Route  path="*" element={ <ErrorPage /> } />
         </Routes>
     </Router>
